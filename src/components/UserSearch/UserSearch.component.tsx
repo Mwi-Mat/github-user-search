@@ -47,7 +47,9 @@ function UserSearch() {
   } else {
     return (
       <div className={styles.wrapper}>
-        <h1>GitHub User Search</h1>
+        <Typography variant='h1' component='div'>
+          GitHub User Search
+        </Typography>
         <div className={styles.searchInput}>
           <TextField
             variant={'outlined'}
@@ -71,7 +73,11 @@ function UserSearch() {
             Search
           </Button>
         </div>
-
+        {data && (
+          <Typography variant='subtitle1' component='p'>
+            Total Results: {data.total_count}
+          </Typography>
+        )}
         {data && <ResultsTable data={data.items} />}
         {data && data.total_count > 30 && (
           <Pagination

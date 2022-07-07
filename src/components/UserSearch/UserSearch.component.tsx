@@ -27,7 +27,9 @@ function UserSearch() {
   }, [page])
 
   function handleSearchSubmit() {
-    refetch()
+    if (searchQuery !== '') {
+      refetch()
+    }
   }
 
   const handlePageChange = (event: React.ChangeEvent<unknown>, value: number) => {
@@ -63,6 +65,7 @@ function UserSearch() {
             onClick={handleSearchSubmit}
             variant={'contained'}
             color='secondary'
+            disabled={searchQuery === ''}
             fullWidth
           >
             Search

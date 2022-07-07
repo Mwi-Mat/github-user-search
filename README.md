@@ -1,3 +1,8 @@
+# Notes
+
+- Due to Github's Search API only returning endpoints for additonal data and rate limiting to 60 requests an hour I am only displaying avatars, name, and link to profile on cards.
+- Also, it limits to first 1000 results so pagination adjusts for that.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -1,4 +1,3 @@
-import './assets/styles/globals.scss'
 import UserSearch from './components/UserSearch/UserSearch.component'
 
 function App() {

@@ -1,3 +1,4 @@
+import { Button, InputAdornment, TextField } from '@mui/material'
 import { useRef, useState } from 'react'
 import { SearchData } from '../../utils/interfaces'
 import ResultsTable from '../ResultsTable/ResultsTable.component'
@@ -32,8 +33,26 @@ function UserSearch() {
   } else {
     return (
       <div className={styles.wrapper}>
-        <input type='text' ref={searchRef} />
-        <button onClick={handleSearchRequest}>Search</button>
+        <div className={styles.searchInput}>
+          <TextField
+            variant={'outlined'}
+            ref={searchRef}
+            size='small'
+            placeholder='Search for users...'
+            color='secondary'
+            fullWidth
+          />
+          <Button
+            aria-label='Search'
+            variant={'contained'}
+            color='secondary'
+            onClick={handleSearchRequest}
+            fullWidth
+          >
+            Search
+          </Button>
+        </div>
+
         {data && <ResultsTable data={data.items} />}
       </div>
     )

@@ -1,7 +1,12 @@
 import './assets/styles/globals.scss'
+import UserSearch from './components/UserSearch/UserSearch.component'
 
 function App() {
-  return <div className='App'></div>
+  return (
+    <div className='App'>
+      <UserSearch />
+    </div>
+  )
 }
 
 export default App

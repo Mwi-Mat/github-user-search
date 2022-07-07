@@ -14,10 +14,18 @@ function ResultsTable(props: ResultsTableProps) {
       <Grid container spacing={4}>
         {props.data.map((user) => (
           <Grid item key={user.id}>
-            <Card variant='outlined'>
-              <CardContent>
+            <Card
+              variant='outlined'
+              sx={{
+                alignItems: 'center',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+              }}
+            >
+              <CardContent sx={{ display: 'flex', gap: '10px', textAlign: 'center' }}>
                 <Avatar src={user.avatar_url} alt={`${user.login} profile picture`} />
-                <Typography variant='h5' component='div'>
+                <Typography variant='h4' component='div'>
                   {user.login}
                 </Typography>
               </CardContent>

@@ -1,8 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App'
+import { QueryClient, QueryClientProvider } from 'react-query'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import { CssBaseline } from '@mui/material'
+import App from './App'
+
+const queryClient = new QueryClient()
 
 const darkTheme = createTheme({
   palette: {
@@ -13,10 +16,12 @@ const darkTheme = createTheme({
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <React.StrictMode>
-    <ThemeProvider theme={darkTheme}>
-      <CssBaseline>
-        <App />
-      </CssBaseline>
-    </ThemeProvider>
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider theme={darkTheme}>
+        <CssBaseline>
+          <App />
+        </CssBaseline>
+      </ThemeProvider>
+    </QueryClientProvider>
   </React.StrictMode>,
 )

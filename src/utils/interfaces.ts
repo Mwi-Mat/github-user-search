@@ -1,9 +1,3 @@
-export interface SearchData {
-  total_count: number
-  incomplete_results: boolean
-  items: UserData[]
-}
-
 export interface UserData {
   login: string
   id: number
